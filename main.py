@@ -41,7 +41,7 @@ if __name__ == "__main__":
 def enviar_email(outlook):
     outlook = win32.Dispatch("outlook.application")
     mail = outlook.CreateItem(0)
-    mail.To = "kevindesignnc@gmail.com"
+    mail.To = "Destinatário"
     mail.Subject = "Teste"
     mail.HTMLBody = '''
     <p>Corpo do email em HTML</p>

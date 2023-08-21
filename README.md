@@ -1,5 +1,8 @@
 # Descrição do código
-Sitema simples que permite ao usuário escolher uma pasta para compacta-lá (ignorando outros arquivos .zip) e depois permite que o usuário selecione o arquivo para enviar via e-mail (outlook já configurado na máquina) pré-definido no próprio código.
+Sistema simples que permite ao usuário escolher uma pasta para compacta-lá (ignorando outros arquivos .zip) e depois permite que o usuário selecione o arquivo para enviar via e-mail (outlook já configurado na máquina) pré-definido no próprio código.
+
+> ### Upgrade
+> Agora é possível adicionar a assinatura de e-mail ao corpo HTML do e-mail. (Apenas assinaturas em imagem).
 
 # Observações
 O código foi feito em objeto de estudo, está muito simples e bem limitado. (Sou estudante recente de programação e Python)

@@ -2,7 +2,6 @@ import os
 from zipfile import ZipFile, ZIP_DEFLATED
 from tkinter.filedialog import askdirectory
 from tkinter.filedialog import askopenfilename
-from tkinter.filedialog import askopenfilename
 import win32com.client as win32
 
 

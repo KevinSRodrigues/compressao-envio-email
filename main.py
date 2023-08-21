@@ -2,6 +2,7 @@ import os
 from zipfile import ZipFile, ZIP_DEFLATED
 from tkinter.filedialog import askdirectory
 from tkinter.filedialog import askopenfilename
+from tkinter.filedialog import askopenfilename
 import win32com.client as win32
 
 
@@ -38,19 +39,34 @@ if __name__ == "__main__":
     n = compactar_tudo(diretorio)
     print(f"{n} arquivos compactados com sucesso")
 
+
 def enviar_email(outlook):
     outlook = win32.Dispatch("outlook.application")
     mail = outlook.CreateItem(0)
     mail.To = "Destinatário"
     mail.Subject = "Teste"
-    mail.HTMLBody = '''
-    <p>Corpo do email em HTML</p>
-    '''
+
     mail.Attachments.Add(attachment_path)
 
+    pathToIMage = askopenfilename(title="Selecione sua assinatura")
+    attachment = mail.Attachments.Add(pathToIMage)
+
+    attachment.PropertyAccessor.SetProperty(
+        "http://schemas.microsoft.com/mapi/proptag/0x3712001F", "MyId1")
+
+    mail.HTMLBody = '''
+
+    <p>Teste</p>
+
+    <p><figure><img src="cid:MyId1"></figure></p>
+
+    '''
+    mail.display()
     mail.Send()
 
+
 if __name__ == "__main__":
-    attachment_path = askopenfilename(title="Selecione o arquivo", initialdir=diretorio)
+    attachment_path = askopenfilename(
+        title="Selecione o arquivo", initialdir=diretorio)
     b = enviar_email(attachment_path)
     print(f"Arquivo {attachment_path} anexado e e-mail enviado com sucesso!")

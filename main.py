@@ -1,4 +1,4 @@
-import os
+#import os
 from zipfile import ZipFile, ZIP_DEFLATED
 from tkinter.filedialog import askdirectory
 from tkinter.filedialog import askopenfilename
